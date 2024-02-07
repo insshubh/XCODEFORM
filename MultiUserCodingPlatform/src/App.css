@@ -1,6 +1,6 @@
 .img-text {
   
-  background: linear-gradient(silver 0%, silver 100%);
+  background: linear-gradient(rgb(80, 76, 76) 0%, rgb(246, 189, 189) 100%);
   /* Set the background size and repeat properties. */
   background-size: 57%;
   background-repeat: repeat;
@@ -59,7 +59,7 @@
     .img-text {
       top: 3em;
       background-color: #D9AFD9;
-      background-image: linear-gradient(0deg, #e6dce6 0%, #ee5656 100%);
+      background-image: linear-gradient(0deg, #e6dce6 0%, #ef9696 100%);
       color: white;
 
     }
@@ -67,9 +67,9 @@
 
   @media only screen and (min-width: 768px) {
     .img-text {
-      top: 1em;
+      top: 16em;
       background-color: #D9AFD9;
-      background-image: linear-gradient(0deg, #f05e74 0%, #f3ebeb 100%);
+      background-image: linear-gradient(0deg, #dad5d6 0%, #f0aeae 100%);
       color: white;
 
     }

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 
 function HomePage() {
@@ -76,9 +77,12 @@ function HomePage() {
             <footer className="text-white items-center p-4 fixed bottom-0 right-0">
              
             <div className="relative group">
-  <p className="text-s font-bold tracking-wide bg-gradient-to-l from-amber-100 to-red-400 bg-clip-text text-transparent group-hover:from-white">
-    Made By <a className="text-s font-bold tracking-wide bg-gradient-to-l from-amber-100 to-red-400 bg-clip-text text-transparent group-hover:from-white group-hover:to-white group-hover:after:from-rose-300 group-hover:after:to-fuchsia-700" href="https://github.com/insshubh">GodZ</a>
-  </p>
+            <p className="text-s font-bold tracking-wide bg-gradient-to-l from-amber-100 to-red-400 bg-clip-text text-transparent group-hover:from-white">
+  <Link to="https://github.com/insshubh">
+  Made By GodZ
+  </Link>
+</p>
+
 </div>
 
             </footer>
@@ -90,3 +94,7 @@ function HomePage() {
 }
 
 export default HomePage;
+
+""
+
+
