@@ -1,27 +1,38 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { v4 as uid }  from "uuid";
+import { Link, useNavigate } from "react-router-dom"; // Importing useNavigate
+import { v4 as uid } from "uuid";
 import toast from "react-hot-toast";
-import { Navigation } from "react-router";
 
 function HomePage() {
   // set the username and room id with help uuid module
-    const [roomID, setId] = useState('');
-    const [user, setuser] = useState('');
+  const [roomID, setId] = useState('');
+  const [user, setuser] = useState('');
+  const navigate = useNavigate(); // Using useNavigate hook
 
-   const newroom = (e) => {
+  const newroom = (e) => {
     const id = uid();
     setId(id);
-    toast.success("ID Created Succesfully")
-   }
-   const joinroom =()=>{
-     if(!user && !roomID)
-     {
-      toast.error("Please Enter Username and Room ID")
-     }
+    toast.success("ID Created Succesfully");
+  };
 
-     // if It is Valid then Redirect to
-   }
+  const joinroom = () => {
+    if (!user || !roomID) { // Changed && to || for logical OR
+      toast.error("Please Enter Username and Room ID");
+      return;
+    }
+
+    // if It is Valid then Redirect to editorpage
+    navigate(`/editor/${roomID}`, {state :{user}});
+  };
+
+  // Method which responds when we hit enter 
+  const enterInput = (e) =>
+  {
+    if(e.code == 'Enter')
+    {
+      joinroom();
+    }
+  }
 
   return (
     <>
@@ -60,6 +71,7 @@ function HomePage() {
                 className="py-3 peer block w-full rounded-md border-none bg-white px-3 py-2 text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-75 transition-all duration-200 ease-linear focus:placeholder-gray-500"
                 id="exampleFormControlInput1"
                 placeholder="Username"
+                onKeyUp={enterInput}
                 onChange={(e) => setuser(e.target.value)}
                 value={user}
               />
@@ -71,6 +83,7 @@ function HomePage() {
                 className="py-3 peer block w-full rounded-md border-none bg-white px-3 py-2 text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-75 transition-all duration-200 ease-linear focus:placeholder-gray-500"
                 id="exampleFormControlInput11"
                 placeholder="Room ID"
+                onKeyUp={enterInput}
                 onChange={(e) => setId(e.target.value)}
                 value={roomID}
                 
