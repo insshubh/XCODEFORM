@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom"; // Importing useNavigate
-import { v4 as uid } from "uuid";
-import toast from "react-hot-toast";
+import { nanoid } from 'nanoid';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function HomePage() {
   // set the username and room id with help uuid module
@@ -10,14 +11,16 @@ function HomePage() {
   const navigate = useNavigate(); // Using useNavigate hook
 
   const newroom = (e) => {
-    const id = uid();
+   
+    const id = nanoid();
     setId(id);
-    toast.success("ID Created Succesfully");
+    toast.success('ID Created Successfully', { toastId: "joinRoom", autoClose: 2000 });
+
   };
 
   const joinroom = () => {
-    if (!user || !roomID) { // Changed && to || for logical OR
-      toast.error("Please Enter Username and Room ID");
+    if (!user || !roomID) { 
+      toast.error("Please Enter Username and Room ID",{ toastId: "joinRoom", autoClose: 2500 });
       return;
     }
 
@@ -108,6 +111,7 @@ function HomePage() {
               >
                 Create New ID
               </button>
+              <ToastContainer />
             </div>
             <footer className="text-white items-center p-4 fixed bottom-0 right-0">
               <div className="relative group">
