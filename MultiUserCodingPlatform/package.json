@@ -12,6 +12,7 @@
   "dependencies": {
     "nanoid": "^5.0.6",
     "react": "^18.2.0",
+    "react-avatar": "^5.0.3",
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.4.1",
     "react-router": "^6.22.0",

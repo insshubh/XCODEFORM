@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import './Navbar.css'; // Import CSS file for styling
-import Bulb from './Bulb'; // Assuming you have a component named Bulb
+import './Navbar.css';
 
 const Navbar = () => {
     const [isOn, setIsOn] = useState(false);

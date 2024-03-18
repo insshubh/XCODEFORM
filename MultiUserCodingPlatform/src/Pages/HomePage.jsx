@@ -115,7 +115,7 @@ function HomePage() {
             </div>
             <footer className="text-white items-center p-4 fixed bottom-0 right-0">
               <div className="relative group">
-                <p className="text-s font-bold tracking-wide bg-gradient-to-l from-amber-100 to-red-400 bg-clip-text text-transparent group-hover:from-white">
+                <p className="text-s font-bold tracking-wide bg-gradient-to-l from-gray-900 to-white bg-clip-text text-transparent group-hover:from-white">
                   <Link to="https://github.com/insshubh">Made By GodZ</Link>
                 </p>
               </div>
